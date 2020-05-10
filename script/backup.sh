@@ -8,7 +8,7 @@ pass=$(tail -n 1 "$credentials")
 # Path variables
 backup_folder="/home/git/gitea-backup"
 gitea="/home/git/gitea/gitea"
-working_dir=$(pwd)
+working_dir="/home/git/"
 remote_dir=/gitea_backup
 
 # File variables
@@ -17,15 +17,12 @@ remote_files="$backup_folder"/remote_files.txt
 # Other variables
 nr_backups=10
 
-# Switch to git user
-su - git
-
 # Create backup file from gitea
-"$gitea" dump -c /home/git/gitea/custom/conf/app.ini
-mv "$working_dir"/gitea-dump-* "$backup_folder"
+su - git -c ""$gitea" dump -c /home/git/gitea/custom/conf/app.ini"
+su - git -c "mv "$working_dir"/gitea-dump-* "$backup_folder""
 
 # Upload file to mega
-mega-login '$usr' '$pass'
+mega-login "$usr" "$pass"
 mega-put "$backup_folder"/gitea-dump-* "$remote_dir"
 
 # Delete if more then X files
@@ -43,6 +40,6 @@ fi
 
 # Clean up
 mega-logout
-rm "$backup_folder"/gitea-dump-*
-rm "$remote_files"
-exit
+su - git -c "rm "$backup_folder"/gitea-dump-*"
+chown git:git "$remote_files"
+su - git -c "rm "$remote_files""
