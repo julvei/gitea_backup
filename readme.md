@@ -1,5 +1,5 @@
 # Gitea backup
-The backup.sh bash script can backup the [gitea server](https://gitea.io/en-us/) repositories to the [mega cloud](https://mega.nz/) with a defined history. Advantage is, that this cloud has a [command line tool](https://mega.nz/cmd), such that the backup can be scheduled on a regular basis via a script and furthermore this cloud is end-to-end encrypted.
+The backup.sh bash script can backup the [gitea server](https://gitea.io/en-us/) repositories by using the [gitea dump command](https://docs.gitea.io/en-us/backup-and-restore/) to the [mega cloud](https://mega.nz/). A number of history files can be configured. Advantage is, that the mega cloud has a [command line tool](https://mega.nz/cmd), such that the backup can be scheduled on a regular basis via a script and furthermore this cloud is end-to-end encrypted.
 
 **Disclaimer: I have nothing to do with the gitea project, this is only my way to backup my private gitea repositories. This script is running actively on my server without problems, but I have only tested it there, so no guarantee it works anywhere else!**  
 
