@@ -3,7 +3,7 @@ The backup.sh bash script can backup the [gitea server](https://gitea.io/en-us/)
 
 **Disclaimer: I have nothing to do with the gitea project, this is only my way to backup my private gitea repositories. This script is running actively on my server without problems, but I have only tested it there, so no guarantee it works anywhere else!**  
 
-**Be careful: This script has not been made failsafe, so be sure you know what this script is doing and which files folders have to be available. I am planning to change this by times.**
+**Be careful: This script has not been made failsafe, so be sure you know what this script is doing and which files and folders have to be available. I am planning to change this by times.**
 
 ## Mega Command-Line
 The MEGAcmd can be installed by via their [github repository](https://github.com/meganz/MEGAcmd). [Documentation](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md) about it can also found in the github repository.
